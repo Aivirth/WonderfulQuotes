@@ -2,7 +2,7 @@
   <div class="row">
     <form action="">
       <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-md-6 col-md-offset-3">
-        <label for=""></label>
+        <label for="">Quote</label>
         <textarea name="" class="form-control" v-model="quote" rows="3"></textarea>
       </div>
       <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-md-6 col-md-offset-3">
@@ -20,7 +20,10 @@ export default {
     };
   },
   methods: {
-    createNew() {}
+    createNew() {
+      this.$emit("quoteAdded", this.quote);
+      this.quote = "";
+    }
   }
 };
 </script>
